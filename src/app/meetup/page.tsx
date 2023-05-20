@@ -1,3 +1,3 @@
 export default function Meetup() {
-  return <></>
+  return <>schedule meetups with me here</>;
 }
