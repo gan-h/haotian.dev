@@ -2,7 +2,9 @@ import Link from "next/link";
 import styles from "./page.module.css";
 
 export default async function Index() {
-  const catResponse = await fetch("https://cataas.com/cat");
+  const catResponse = await fetch("https://cataas.com/cat", {
+    cache: "no-store",
+  });
   const cat = await catResponse.arrayBuffer();
 
   return (

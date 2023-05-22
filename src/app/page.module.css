@@ -3,7 +3,7 @@
   margin: auto auto auto auto;
   max-width: 200px;
   max-height: 200px;
-  transition: all 400ms;
+  transition: all 800ms;
 }
 
 .box:hover > .catImage {
