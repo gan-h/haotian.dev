@@ -1,6 +1,10 @@
 import Link from "next/link";
+import styles from "./page.module.css";
 
-export default function Index() {
+export default async function Index() {
+  const catResponse = await fetch("https://cataas.com/cat");
+  const cat = await catResponse.arrayBuffer();
+
   return (
     <>
       <p>this is my website</p>
@@ -9,6 +13,16 @@ export default function Index() {
       <Link href={"meetup"}>Meet Me</Link>
       <br></br>
       <Link href={"work"}>View My Work</Link>
+      <br></br>
+      <div className={styles.box}>
+        <img
+          className={styles.catImage}
+          src={
+            `data:${catResponse.headers.get("content-type")};base64,` +
+            Buffer.from(cat).toString("base64")
+          }
+        ></img>
+      </div>
     </>
   );
 }
