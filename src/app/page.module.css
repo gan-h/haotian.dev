@@ -1,0 +1,20 @@
+.catImage {
+  display: block;
+  margin: auto auto auto auto;
+  max-width: 200px;
+  max-height: 200px;
+  transition: all 400ms;
+}
+
+.box:hover > .catImage {
+  transform: rotate(180deg);
+}
+
+.box {
+  box-sizing: border-box;
+  width: 204px;
+  height: 204px;
+  margin: 0 auto;
+  border: 2px solid black;
+  overflow: hidden;
+}
